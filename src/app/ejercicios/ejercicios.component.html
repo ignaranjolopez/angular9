@@ -1,3 +1,5 @@
-<h1>{{ title }}</h1>
+<h1>{{ title | uppercase }}</h1>
 <p>ejercicios works!</p>
 <h2>id: {{persona.id}} | nombre: {{persona.nombre}}</h2>
+<h2>fecha de nacimiento: {{persona.fechaNacimiento}} </h2>
+<h2>fecha de nacimiento con pipe fecha: {{persona.fechaNacimiento | date: 'dd-MM-yyyy'}} </h2>

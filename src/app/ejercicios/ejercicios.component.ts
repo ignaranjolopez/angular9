@@ -12,7 +12,8 @@ export class EjerciciosComponent implements OnInit {
 
   persona : Persona = {
     id: 1,
-    nombre: 'ignacio'
+    nombre: 'ignacio',
+    fechaNacimiento: new Date(1994, 10, 1, 23, 3, 42, 11)
   };
 
 
