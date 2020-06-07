@@ -11,18 +11,24 @@ export class EjerciciosComponent implements OnInit {
 
   title = 'Component Ejercicio';
 
-  persona : Persona = {
+  personaInicial : Persona = {
     id: 1,
     nombre: 'ignacio',
     fechaNacimiento: new Date(1994, 10, 1, 23, 3, 42, 11)
   };
 
   personas = personasList;
+  personaSeleccionada:Persona;
 
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  selectPersona(persona:Persona):void{
+    console.log("persona obtenida: " + persona.nombre);
+    this.personaSeleccionada = persona;
   }
 
 }

@@ -1,15 +1,25 @@
 <h1>{{ title | uppercase }}</h1>
 <p>ejercicios works!</p>
 <label for="">
-  <input [(ngModel)]="persona.nombre" type="text" name="">
+  <input [(ngModel)]="personaInicial.nombre" type="text" name="">
 </label>
-<h2>id: {{persona.id}} | nombre: {{persona.nombre}}</h2>
-<h2>fecha de nacimiento: {{persona.fechaNacimiento}} </h2>
-<h2>fecha de nacimiento con pipe fecha: {{persona.fechaNacimiento | date: 'dd-MM-yyyy'}} </h2>
+<h2>id: {{personaInicial.id}} | nombre: {{personaInicial.nombre}}</h2>
+<h2>fecha de nacimiento: {{personaInicial.fechaNacimiento}} </h2>
+<h2>fecha de nacimiento con pipe fecha: {{personaInicial.fechaNacimiento | date: 'dd-MM-yyyy'}} </h2>
 <br>
 <hr>
 <ul>
-  <li *ngFor="let persona of personas">
+  <li *ngFor="let persona of personas" (click)="selectPersona(persona)">
     <span><b>{{ persona.id }})</b></span> Nombre: <b>{{ persona.nombre }}</b>
   </li>
 </ul>
+
+<div *ngIf="personaSeleccionada">
+
+<hr>
+<h2>Informacion</h2>
+<span>id: {{ personaSeleccionada.id }}</span><br>
+<label>nombre: {{ personaSeleccionada.nombre }}</label><br>
+<label>Fecha de Nacimiento: {{ personaSeleccionada.fechaNacimiento | date: 'dd-MM-yyyy' }}</label>
+
+</div>
