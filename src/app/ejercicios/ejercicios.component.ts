@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Persona } from "../persona";
+import { personasList } from "../collection-personas";
 
 @Component({
   selector: 'app-ejercicios',
@@ -15,6 +16,8 @@ export class EjerciciosComponent implements OnInit {
     nombre: 'ignacio',
     fechaNacimiento: new Date(1994, 10, 1, 23, 3, 42, 11)
   };
+
+  personas = personasList;
 
 
   constructor() { }

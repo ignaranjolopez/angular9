@@ -6,3 +6,10 @@
 <h2>id: {{persona.id}} | nombre: {{persona.nombre}}</h2>
 <h2>fecha de nacimiento: {{persona.fechaNacimiento}} </h2>
 <h2>fecha de nacimiento con pipe fecha: {{persona.fechaNacimiento | date: 'dd-MM-yyyy'}} </h2>
+<br>
+<hr>
+<ul>
+  <li *ngFor="let persona of personas">
+    <span><b>{{ persona.id }})</b></span> Nombre: <b>{{ persona.nombre }}</b>
+  </li>
+</ul>
