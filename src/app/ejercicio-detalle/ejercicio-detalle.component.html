@@ -5,5 +5,5 @@
   <span>id: {{ persona.id }}</span><br>
   <label>nombre: {{ persona.nombre }}</label><br>
   <label>Fecha de Nacimiento: {{ persona.fechaNacimiento | date: 'dd-MM-yyyy' }}</label>
-
+  <button (click)="goBack()">Volver</button>
 </div>
