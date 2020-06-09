@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Persona } from "../persona";
-import { personasList } from "../collection-personas";
+import { EjercicioService } from '../ejercicio.service';
 
 @Component({
   selector: 'app-ejercicios',
@@ -17,13 +17,18 @@ export class EjerciciosComponent implements OnInit {
     fechaNacimiento: new Date(1994, 10, 1, 23, 3, 42, 11)
   };
 
-  personas = personasList;
+  personas:Persona[];
   personaSeleccionada:Persona;
 
 
-  constructor() { }
+  constructor(private ejercicioService:EjercicioService) { }
+
+  getPersonas():void{
+    this.personas = this.ejercicioService.getPersona();
+  }
 
   ngOnInit(): void {
+    this.getPersonas();
   }
 
   selectPersona(persona:Persona):void{
