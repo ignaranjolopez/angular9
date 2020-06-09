@@ -1,0 +1,9 @@
+<div *ngIf="persona">
+
+  <hr>
+  <h2>Informacion</h2>
+  <span>id: {{ persona.id }}</span><br>
+  <label>nombre: {{ persona.nombre }}</label><br>
+  <label>Fecha de Nacimiento: {{ persona.fechaNacimiento | date: 'dd-MM-yyyy' }}</label>
+
+</div>

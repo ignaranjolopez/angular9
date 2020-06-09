@@ -1,0 +1,7 @@
+li.selected {
+  background-color: rgb(228, 228, 110);
+}
+
+li.selected:hover {
+  background-color: rgb(247, 247, 0)3);
+}

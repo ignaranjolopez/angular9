@@ -9,17 +9,8 @@
 <br>
 <hr>
 <ul>
-  <li *ngFor="let persona of personas" (click)="selectPersona(persona)">
+  <li *ngFor="let persona of personas" (click)="selectPersona(persona)" [class.selected]="persona === personaSeleccionada">
     <span><b>{{ persona.id }})</b></span> Nombre: <b>{{ persona.nombre }}</b>
   </li>
 </ul>
-
-<div *ngIf="personaSeleccionada">
-
-<hr>
-<h2>Informacion</h2>
-<span>id: {{ personaSeleccionada.id }}</span><br>
-<label>nombre: {{ personaSeleccionada.nombre }}</label><br>
-<label>Fecha de Nacimiento: {{ personaSeleccionada.fechaNacimiento | date: 'dd-MM-yyyy' }}</label>
-
-</div>
+<app-ejercicio-detalle [persona]="personaSeleccionada"></app-ejercicio-detalle>
