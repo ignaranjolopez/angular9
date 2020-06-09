@@ -10,7 +10,11 @@ export class EjercicioService {
 
   constructor() { }
 
-  getPersona():Observable<Persona[]>{
+  getPersonas():Observable<Persona[]>{
     return of(personasList);
+  }
+
+  getPersona(id:number):Observable<Persona>{
+    return of(personasList.find(persona=>persona.id==id));
   }
 }

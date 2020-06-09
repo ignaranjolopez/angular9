@@ -9,8 +9,10 @@
 <br>
 <hr>
 <ul>
-  <li *ngFor="let persona of personas" (click)="selectPersona(persona)" [class.selected]="persona === personaSeleccionada">
+  <li *ngFor="let persona of personas" [class.selected]="persona === personaSeleccionada">
+    <a routerLink="/detalle/{{ persona.id }}">
     <span><b>{{ persona.id }})</b></span> Nombre: <b>{{ persona.nombre }}</b>
+  </a>
   </li>
 </ul>
-<app-ejercicio-detalle [persona]="personaSeleccionada"></app-ejercicio-detalle>
+<app-ejercicio-detalle></app-ejercicio-detalle>

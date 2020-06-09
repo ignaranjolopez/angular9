@@ -18,7 +18,7 @@ export class PanelComponent implements OnInit {
   }
 
   getPersonas():void{
-    this.ejercicioService.getPersona().subscribe(personas=>this.personas=personas.slice(1,5));
+    this.ejercicioService.getPersonas().subscribe(personas=>this.personas=personas.slice(1,5));
   }
 
 
