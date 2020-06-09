@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EjercicioService } from '../ejercicio.service';
+import { Persona } from '../persona';
 
 @Component({
   selector: 'app-panel',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PanelComponent implements OnInit {
 
-  constructor() { }
+  personas:Persona[];
+
+  constructor(private ejercicioService:EjercicioService) { }
 
   ngOnInit(): void {
+    this.getPersonas();
   }
+
+  getPersonas():void{
+    this.ejercicioService.getPersona().subscribe(personas=>this.personas=personas.slice(1,5));
+  }
+
 
 }
